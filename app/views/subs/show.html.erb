@@ -1,0 +1,21 @@
+
+
+<h3> <%= @sub.title %> </h3>
+
+<div>
+  <%= @sub.description %>
+</div>
+
+<h5>Posts</h5>
+<ul>
+  <% Post.all.each do |post| %>
+    <% if post.sub_id == @sub.id %>
+    <li>
+      <a href="<%=post_url(post)%>"><%= post.title %></a>
+    </li>
+    <% end %>
+  <% end %>
+
+</ul>
+
+
